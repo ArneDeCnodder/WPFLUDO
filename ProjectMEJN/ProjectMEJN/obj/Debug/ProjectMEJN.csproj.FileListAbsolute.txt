@@ -1,0 +1,17 @@
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe.config
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.pdb
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csprojAssemblyReference.cache
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\MainWindow.g.cs
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\Splashscreen.g.cs
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\App.g.cs
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN_MarkupCompile.cache
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN_MarkupCompile.lref
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\MainWindow.baml
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\Splashscreen.baml
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.g.resources
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.Properties.Resources.resources
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.GenerateResource.cache
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CoreCompileInputs.cache
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.exe
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.pdb
