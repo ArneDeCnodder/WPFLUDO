@@ -15,3 +15,20 @@ C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\Projec
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CoreCompileInputs.cache
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.exe
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.pdb
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe.config
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.pdb
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csprojAssemblyReference.cache
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\App.g.cs
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN_MarkupCompile.cache
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN_MarkupCompile.lref
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.g.resources
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.Properties.Resources.resources
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.GenerateResource.cache
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CoreCompileInputs.cache
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.exe
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.pdb
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\Views\HomeScreen.g.cs
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\Views\HomeScreen.baml
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\Views\SpelRegels.g.cs
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\Views\SpelRegels.baml

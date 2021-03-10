@@ -1,0 +1,61 @@
+﻿<Window x:Class="ProjectMEJN.Views.SpelRegels"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMEJN.Views"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="SpelRegels" Height="600" Width="700">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF6D000E" Offset="1.1"/>
+            <GradientStop Color="#EC808D" />
+        </RadialGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#EC808D"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Gill Sans"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="Titel" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontFamily" Value="Montserrat"></Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Spelregels"></TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="600px">
+                     
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                    <Setter Property="Padding" Value="10"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="FontFamily" Value="Montserrat"></Setter>
+                    <Setter Property="FontSize" Value="12"></Setter>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Elke speler kiest een kleur en plaatst alle vier de pionnen op de vakken (in matchende kleur) aan de rand van het speelbord. Bepaal wie als eerste mag beginnen. Dit kun je doen door iedereen één keer te laten gooien met de dobbelsteen. Degene met de hoogste worp begint. Daarna speel je met de klok mee."></TextBlock>
+            <TextBlock Text="Een pion van het speelbord slaan Wanneer meerdere spelers pionnen op het bord hebben staan, wordt het spel een tikje gevaarlijker. Indien een pion op een reeds bezet vakje terechtkomt, moet de pion die daar eerder stond het veld ruimen. Deze geslagen pion wordt teruggezet op een van de vier gekleurde vakken aan de rand van het speelbord. Dit betekent dat de 'geslagen speler' opnieuw 6 moet gooien en met die pion weer helemaal opnieuw moet beginnen. Snap je al waar de naam van het spel vandaan komt?"></TextBlock>
+            <TextBlock Text="Het verplaatsen van pionnen Indien je eerste pion het echte speelbord heeft betreden, mag je tijdens jouw beurt weer met de dobbelsteen gooien en je pion verplaatsen. Hoe hoger je gooit, des te meer stappen je vooruit mag zetten en hoe eerder je bij het thuishonk bent.   Heb je al een pion in het spel en gooi je weer 6? Dan mag je kiezen of je met de pion 6 stappen vooruit zet óf een nieuw pion op het startvakje plaatst. Als alle 4 de pionnen van de eigen kleur al in het spel zijn, blijft er maar één optie over."></TextBlock>
+            <TextBlock Text="Mens Erger Je Niet regels thuishonk Het einddoel van het spel is het thuishonk (in de eigen kleur) in het midden van het speelbord. Er gelden specifieke Mens Erger Je Niet! regels voor het binnenkomen in het thuishonk. Ben je na een heel rondje dichtbij het thuishonk? Dan moet de worp jouw pion op een leeg vakje in het thuishonk laten eindigen. Is het vakje reeds bezet door een andere pion van jezelf? Dan moet je op jouw volgende beurt wachten. Gooi je meer ogen dan dat er vakjes over zijn, tel dan vanaf het einde terug. En nu maar hopen dat jouw pion met de finish in zicht niet van zijn plek wordt geslagen!  Wie als eerste alle 4 zijn/haar pionnen in het thuishonk weet te krijgen, wint het bordspel."></TextBlock>
+       
+        </StackPanel>
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="HOME" Click="Button_Click"></Button>
+        
+    </Grid>
+</Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\
 ProjectMEJN
 none
 false
 DEBUG;TRACE
-C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\App.xaml
-2-1099319702
+C:\Users\arned\Source\Repos\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\App.xaml
+2364040095
 
-6-1205172522
+101724594245
 13-1505183044
-MainWindow.xaml;Splashscreen.xaml;
+Views\HomeScreen.xaml;Views\SpelRegels.xaml;
 
 False
 

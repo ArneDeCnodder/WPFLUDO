@@ -10,19 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectMEJN
+namespace ProjectMEJN.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HomeScreen.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class HomeScreen : Window
     {
-        public MainWindow()
+        public HomeScreen()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SpelRegels page = new SpelRegels();
+            page.Show();
+            this.Close();
         }
     }
 }
