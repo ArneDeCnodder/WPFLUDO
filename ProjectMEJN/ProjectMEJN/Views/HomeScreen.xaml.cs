@@ -30,5 +30,12 @@ namespace ProjectMEJN.Views
             page.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Spelers page = new Spelers();
+            page.Show();
+            this.Close();
+        }
     }
 }

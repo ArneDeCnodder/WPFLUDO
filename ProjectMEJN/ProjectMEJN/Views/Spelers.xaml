@@ -1,0 +1,79 @@
+﻿<Window x:Class="ProjectMEJN.Views.Spelers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectMEJN.Views"
+        xmlns:viewmodel="clr-namespace:ProjectMEJN.ViewModel"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="Spelers" Height="600" Width="700">
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF6D000E" Offset="1.1"/>
+            <GradientStop Color="#EC808D" />
+        </RadialGradientBrush>
+    </Window.Background>
+    <Window.Resources>
+        <viewmodel:SpelersViewModel x:Key="SpelersViewModel"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Spelers"></TextBlock>
+
+        <Grid Grid.Row="1" DataContext="{StaticResource SpelersViewModel}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ListView Grid.Column="0" 
+                  ItemsSource="{Binding Spelers}" 
+                  SelectionMode="Single" 
+                  SelectedItem="{Binding HuidigeSpeler}"
+                  Height="300" Width="320" FontFamily="Montserrat" FontSize="15" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="100" 
+                                    Header="Voornaam" 
+                                    DisplayMemberBinding="{Binding Voornaam}" />
+                        <GridViewColumn Width="100" 
+                                    Header="Familienaam"
+                                    DisplayMemberBinding="{Binding Familienaam}" />
+                        <GridViewColumn Width="100" 
+                                    Header="Kleur pion"
+                                    DisplayMemberBinding="{Binding Kleur}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Grid.Column="1" >
+                <TextBlock Text="Voornaam" Margin="30,0" FontSize="15" Foreground="white" FontFamily="Montserrat"></TextBlock>
+                <TextBox Margin="30,10" Padding="10" FontFamily="Montserrat"
+                     Text="{Binding HuidigeSpeler.Voornaam}" />
+                <TextBlock Text="Familienaam" Margin="30,0"  FontFamily="Montserrat" FontSize="15" Foreground="white"></TextBlock>
+                <TextBox  Margin="30,10" Padding="10" FontFamily="Montserrat"
+                      Text="{Binding HuidigeSpeler.Familienaam}" />
+                <TextBlock Text="Kleur (Kies steeds een andere kleur!) " Margin="30,0" FontSize="15" Foreground="white"  FontFamily="Montserrat"></TextBlock>
+                <TextBox  Margin="30,10" Padding="10" FontFamily="Montserrat"
+                      Text="{Binding HuidigeSpeler.Kleur}" />
+
+                <Button Style="{StaticResource ButtonStyle}"
+                 Content="Wijzigen"
+                    Command="{Binding WijzigenCommand}" />
+                <Button Style="{StaticResource ButtonStyle}"  Content="Verwijderen"
+                    Command="{Binding VerwijderenCommand}" />
+                <Button Style="{StaticResource ButtonStyle}"  Content="Toevoegen"
+                    Command="{Binding ToevoegenCommand}" />
+            </StackPanel>
+
+        </Grid>
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="SPEEL"></Button>
+    </Grid>
+</Window>

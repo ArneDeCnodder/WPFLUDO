@@ -44,7 +44,7 @@
             <TextBlock FontSize="20" Text="Een opdracht voor het vak WPF"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical"  HorizontalAlignment="Center">
-            <Button Style="{StaticResource ButtonStyle}" Content="SPEEL EEN SPEL" ></Button>
+            <Button Style="{StaticResource ButtonStyle}" Content="SPEEL EEN SPEL" Click="Button_Click_1" ></Button>
             <Button Style="{StaticResource ButtonStyle}" Margin="30" Content="SPELREGELS" Click="Button_Click" ></Button>
         </StackPanel>
     </Grid>
