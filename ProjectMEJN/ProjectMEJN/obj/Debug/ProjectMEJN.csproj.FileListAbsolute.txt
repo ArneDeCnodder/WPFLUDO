@@ -38,7 +38,6 @@ C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\Projec
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.GenerateResource.cache
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CoreCompileInputs.cache
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CopyComplete
-C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csprojAssemblyReference.cache
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe.config
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.exe
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\bin\Debug\ProjectMEJN.pdb
@@ -63,3 +62,5 @@ C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-W
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.csproj.CopyComplete
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.exe
 C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\WPFLUDO\2021-WPF-ET-07\ProjectMEJN\ProjectMEJN\obj\Debug\ProjectMEJN.pdb
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\Views\Bord.g.cs
+C:\Users\arned\OneDrive\Documenten\IT\Tweede jaar\2e semester\WPF\PROJECT\ProjectMEJN\ProjectMEJN\obj\Debug\Views\Bord.baml

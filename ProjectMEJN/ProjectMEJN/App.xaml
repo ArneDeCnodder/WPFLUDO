@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:ProjectMEJN"
              >
     <Application.Resources>
+        <local:ViewModelLocator x:Key="ViewModelLocator" />
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#EC808D"/>
             <Setter Property="FontSize" Value="20"/>

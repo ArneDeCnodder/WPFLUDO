@@ -37,5 +37,12 @@ namespace ProjectMEJN.Views
             page.Show();
             this.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Bord page = new Bord();
+            page.Show();
+            this.Close();
+        }
     }
 }

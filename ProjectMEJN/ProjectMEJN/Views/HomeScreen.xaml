@@ -33,6 +33,7 @@
             <Setter Property="Padding" Value="10"/>
         </Style>
     </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
@@ -46,6 +47,7 @@
         <StackPanel Grid.Row="1" Orientation="Vertical"  HorizontalAlignment="Center">
             <Button Style="{StaticResource ButtonStyle}" Content="SPEEL EEN SPEL" Click="Button_Click_1" ></Button>
             <Button Style="{StaticResource ButtonStyle}" Margin="30" Content="SPELREGELS" Click="Button_Click" ></Button>
+            <Button Style="{StaticResource ButtonStyle}"  Content="SPELBORD" Click="Button_Click_2" ></Button>
         </StackPanel>
     </Grid>
 </Window>

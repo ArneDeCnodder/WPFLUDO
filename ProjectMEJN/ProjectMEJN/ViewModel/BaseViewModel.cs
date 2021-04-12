@@ -14,7 +14,10 @@ namespace ProjectMEJN.ViewModel
 
         public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
     }
