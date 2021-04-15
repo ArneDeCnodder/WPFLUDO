@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProjectMEJN.Model
 {
-    public class Speler : BaseModel
+    class Spel : BaseModel
     {
         private int id;
-        private string voornaam;
-        private string familienaam;
+        private string naam;
+        private string datum;
 
         public int ID
         {
@@ -26,32 +26,31 @@ namespace ProjectMEJN.Model
             }
         }
 
-        public string Voornaam
+        public string Naam
         {
             get
             {
-                return voornaam;
+                return naam;
             }
 
             set
             {
-                voornaam = value;
+                naam = value;
                 NotifyPropertyChanged();
             }
         }
-        public string Familienaam
+        public string Datum
         {
             get
             {
-                return familienaam;
+                return datum;
             }
 
             set
             {
-                familienaam = value;
+                datum = value;
                 NotifyPropertyChanged();
             }
         }
-
     }
 }

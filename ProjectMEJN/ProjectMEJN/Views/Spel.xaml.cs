@@ -15,33 +15,19 @@ using System.Windows.Shapes;
 namespace ProjectMEJN.Views
 {
     /// <summary>
-    /// Interaction logic for HomeScreen.xaml
+    /// Interaction logic for Spel.xaml
     /// </summary>
-    public partial class HomeScreen : Window
+    public partial class Spel : Window
     {
-        public HomeScreen()
+        public Spel()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SpelRegels page = new SpelRegels();
-            page.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Spelers page = new Spelers();
-            page.Show();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            Spel page = new Spel();
-            page.Show();
+            Window spelspeler = new SpelSpelerPion();
+            spelspeler.Show();
             this.Close();
         }
     }

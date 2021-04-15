@@ -1,13 +1,13 @@
-﻿<Window x:Class="ProjectMEJN.Views.Spelers"
+﻿<Window x:Class="ProjectMEJN.Views.Spel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMEJN.Views"
         xmlns:viewmodel="clr-namespace:ProjectMEJN.ViewModel"
-        mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="Spelers" Height="600" Width="700">
+        mc:Ignorable="d"
+        Title="Spel"  Height="600" Width="700">
     <Window.Background>
         <RadialGradientBrush>
             <GradientStop Color="#FF6D000E" Offset="1.1"/>
@@ -15,7 +15,7 @@
         </RadialGradientBrush>
     </Window.Background>
     <Window.Resources>
-        <viewmodel:SpelersViewModel x:Key="SpelersViewModel"/>
+        <viewmodel:SpelViewModel x:Key="SpelViewModel"/>
     </Window.Resources>
 
     <Grid>
@@ -25,39 +25,39 @@
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Spelers"></TextBlock>
+        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Historiek van de spellen"></TextBlock>
 
-        <Grid Grid.Row="1" DataContext="{StaticResource SpelersViewModel}">
+        <Grid Grid.Row="1" DataContext="{StaticResource SpelViewModel}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <ListView Grid.Column="0" 
-                  ItemsSource="{Binding Spelers}" 
+                  ItemsSource="{Binding Spellen}" 
                   SelectionMode="Single" 
-                  SelectedItem="{Binding HuidigeSpeler}"
+                  SelectedItem="{Binding HuidigSpel}"
                   Height="300" Width="320" FontFamily="Montserrat" FontSize="15" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" >
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="100" 
-                                    Header="Voornaam" 
-                                    DisplayMemberBinding="{Binding Voornaam}" />
-                        <GridViewColumn Width="100" 
-                                    Header="Familienaam"
-                                    DisplayMemberBinding="{Binding Familienaam}" />
-                 
+                        <GridViewColumn Width="auto" 
+                                    Header="Naam Spel" 
+                                    DisplayMemberBinding="{Binding Naam}" />
+                        <GridViewColumn Width="auto" 
+                                    Header="Datum van het spel"
+                                    DisplayMemberBinding="{Binding Datum}" />
+
                     </GridView>
                 </ListView.View>
             </ListView>
 
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <TextBlock Text="Voornaam" Margin="30,0" FontSize="15" Foreground="white" FontFamily="Montserrat"></TextBlock>
+                <TextBlock Text="Naam van het spel" Margin="30,0" FontSize="15" Foreground="white" FontFamily="Montserrat"></TextBlock>
                 <TextBox Margin="30,10" Padding="10" FontFamily="Montserrat"
-                     Text="{Binding HuidigeSpeler.Voornaam}" />
-                <TextBlock Text="Familienaam" Margin="30,0"  FontFamily="Montserrat" FontSize="15" Foreground="white"></TextBlock>
-                <TextBox  Margin="30,10" Padding="10" FontFamily="Montserrat"
-                      Text="{Binding HuidigeSpeler.Familienaam}" />
+                     Text="{Binding HuidigSpel.Naam}" />
+                <TextBlock Text="Datum" Margin="30,0"  FontFamily="Montserrat" FontSize="15" Foreground="white"></TextBlock>
+                
+                <DatePicker Margin="30,10" FontFamily="Montserrat" SelectedDate="{Binding HuidigSpel.Datum}"></DatePicker>
 
                 <Button Style="{StaticResource ButtonStyle}"
                  Content="Wijzigen"
@@ -69,6 +69,6 @@
             </StackPanel>
 
         </Grid>
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="SPEEL"></Button>
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="SPEEL" Command="{Binding VoegToeSpelers}" Click="Button_Click"></Button>
     </Grid>
 </Window>
