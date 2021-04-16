@@ -61,11 +61,18 @@ namespace ProjectMEJN.Model
 
         public void DeleteSpel(Spel spel)
         {
+            string spelpion = "Delete Spelspelerpion where spelid=@id";
+
+            // Uitvoeren SQL statement en doorgeven parametercollectie
+            db.Execute(spelpion, new { spel.ID });
+
             // SQL statement delete 
             string sql = "Delete Spel where id = @id";
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
             db.Execute(sql, new { spel.ID });
+
+            
         }
     }
 }

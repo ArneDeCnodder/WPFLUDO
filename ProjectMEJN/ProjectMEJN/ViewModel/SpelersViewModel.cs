@@ -1,4 +1,5 @@
-﻿using ProjectMEJN.Model;
+﻿using ProjectMEJN.Extensions;
+using ProjectMEJN.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,10 +12,12 @@ namespace ProjectMEJN.ViewModel
 {
     public class SpelersViewModel: BaseViewModel
     {
+        private DialogService dialogService;
         public SpelersViewModel()
         {
             GeefSpelers();
             KoppelenCommands();
+            dialogService = new DialogService();
         }
 
         private ObservableCollection<Speler> spelers;
@@ -55,10 +58,12 @@ namespace ProjectMEJN.ViewModel
             WijzigenCommand = new BaseCommand(WijzigenSpeler);
             VerwijderenCommand = new BaseCommand(DeleteSpeler);
             ToevoegenCommand = new BaseCommand(AddSpeler);
+            BackHomeCommand = new BaseCommand(TerugHome);
         }
         public ICommand VerwijderenCommand { get; set; }
         public ICommand WijzigenCommand { get; set; }
         public ICommand ToevoegenCommand { get; set; }
+        public ICommand BackHomeCommand { get; set; }
 
         private void GeefSpelers()
         {
@@ -91,6 +96,10 @@ namespace ProjectMEJN.ViewModel
             GeefSpelers();
         }
 
+        public void TerugHome()
+        {
+            dialogService.ShowHome();
+        }
 
         public void DeleteSpeler()
         {

@@ -23,12 +23,5 @@ namespace ProjectMEJN.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            HomeScreen home = new HomeScreen();
-            home.Show();
-            this.Close();
-        }
     }
 }

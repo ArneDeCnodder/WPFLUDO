@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ProjectMEJN.Extensions;
+using System.Windows;
 
 namespace ProjectMEJN.ViewModel
 {
@@ -115,7 +116,7 @@ namespace ProjectMEJN.ViewModel
             {
                 Messenger.Default.Send<Spel>(HuidigSpel);
 
-                dialogService.ShowDetailDialog();
+                dialogService.ShowSpelSpelerPion();
             }
         }
     }

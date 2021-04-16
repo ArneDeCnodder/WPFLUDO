@@ -3,27 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewmodel="clr-namespace:ProjectMEJN.ViewModel"
         xmlns:local="clr-namespace:ProjectMEJN.Views"
+        DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=SpelSpelerPionViewModel}"
         mc:Ignorable="d"
-        Title="SpelSpelerPion" Height="450" Width="800">
-    <Window.Resources>
-        <viewmodel:SpelSpelerPionViewModel x:Key="SpelSpelerPionViewModel"/>
-    </Window.Resources>
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="SpelSpelerPion" Height="500" Width="800">
 
-    <Grid DataContext="{StaticResource SpelSpelerPionViewModel}" Margin="10" >
+    <Window.Background>
+        <RadialGradientBrush>
+            <GradientStop Color="#FF6D000E" Offset="1.1"/>
+            <GradientStop Color="#EC808D" />
+        </RadialGradientBrush>
+    </Window.Background>
+
+
+    <Grid Margin="10" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-       
-        <ListView Grid.Column="0" x:Name="listView1"
+        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Selecteer spelers voor het spel"></TextBlock>
+
+        <Label Grid.Column="0" Grid.Row="1" Margin="30 0 0 0" Foreground="White">Overzicht van alle spelers:</Label>
+        <ListView Grid.Column="0" Grid.Row="1" x:Name="listView1" Margin="30"
                   ItemsSource="{Binding Spelers}" 
                   SelectionMode="Single" 
                   SelectedItem="{Binding HuidigeSpelspeler}"
@@ -36,16 +45,14 @@
                     <GridViewColumn Width="auto" 
                                     Header="Familienaam"
                                     DisplayMemberBinding="{Binding Familienaam}" />
-                    <GridViewColumn Width="auto" 
-                                    Header="id"
-                                    DisplayMemberBinding="{Binding ID}" />
 
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Center">
-            <Label Content="Zijn er 4 spelers toegevoegd?"></Label>
-            <Label Content="Progressbar:"></Label>
+        
+        <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="30 0 30 0">
+            <Label Foreground="White" Content="Zijn er 4 spelers toegevoegd?"></Label>
+            <Label Foreground="White" Content="Progressbar:"></Label>
             <ProgressBar  Height="30" Value="{Binding SpelSpelers.Count, Mode=OneWay}" Maximum="16"></ProgressBar>
         </StackPanel>
         <!--<ListView Grid.Column="2"
@@ -69,21 +76,19 @@
             </ListView.View>
         </ListView>-->
 
-        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" >
 
-            <Button Name="button1" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven1Command}"
-                Content="&gt;&gt; Voeg Speler 1 toe" />
-            <Button Name="button2" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven2Command}"
-                Content="&gt;&gt; Voeg Speler 2 toe" />
-            <Button Name="button3" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven3Command}"
-                Content="&gt;&gt; Voeg Speler 3 toe" />
-            <Button Name="button4" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven4Command}"
-                Content="&gt;&gt; Voeg Speler 4 toe" />
+            <Button Name="button1" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}"   Command="{Binding Inschrijven1Command}"
+                Content="&gt;&gt; Voeg Speler 1 toe (Groen)" />
+            <Button Name="button2" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven2Command}"
+                Content="&gt;&gt; Voeg Speler 2 toe (Blauw)" />
+            <Button Name="button3" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven3Command}"
+                Content="&gt;&gt; Voeg Speler 3 toe (Geel)" />
+            <Button Name="button4" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven4Command}"
+                Content="&gt;&gt; Voeg Speler 4 toe (Rood)" />
+
         </StackPanel >
-        
-
-
-
+        <Button Grid.Column="1" Grid.Row="2" Content="START HET SPEL" Style="{StaticResource ButtonStyle}" Margin="30" Command="{Binding OpenSpelbordCommand}"></Button>
 
     </Grid>
 </Window>

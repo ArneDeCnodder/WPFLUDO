@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMEJN.Views"
+        DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=SpelregelsViewModel}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="SpelRegels" Height="600" Width="700">
@@ -49,7 +50,7 @@
             <TextBlock Text="Mens Erger Je Niet regels thuishonk Het einddoel van het spel is het thuishonk (in de eigen kleur) in het midden van het speelbord. Er gelden specifieke Mens Erger Je Niet! regels voor het binnenkomen in het thuishonk. Ben je na een heel rondje dichtbij het thuishonk? Dan moet de worp jouw pion op een leeg vakje in het thuishonk laten eindigen. Is het vakje reeds bezet door een andere pion van jezelf? Dan moet je op jouw volgende beurt wachten. Gooi je meer ogen dan dat er vakjes over zijn, tel dan vanaf het einde terug. En nu maar hopen dat jouw pion met de finish in zicht niet van zijn plek wordt geslagen!  Wie als eerste alle 4 zijn/haar pionnen in het thuishonk weet te krijgen, wint het bordspel."></TextBlock>
        
         </StackPanel>
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="HOME" Click="Button_Click"></Button>
+        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="HOME" Command="{Binding BackHomeCommand}"></Button>
         
     </Grid>
 </Window>

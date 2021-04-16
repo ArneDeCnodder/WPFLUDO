@@ -75,10 +75,10 @@ namespace ProjectMEJN.Model
                 this.Add(new Square(i + 51, 6 - i, 6, new SolidColorBrush(Colors.Red)));
             }
             //start
-            this.Add(new Square(57, 2, 2, new SolidColorBrush(Colors.Gray)));
-            this.Add(new Square(58, 2, 3, new SolidColorBrush(Colors.Gray)));
-            this.Add(new Square(59, 3, 2, new SolidColorBrush(Colors.Gray)));
-            this.Add(new Square(60, 3, 3, new SolidColorBrush(Colors.Gray)));
+            this.Add(new Square(57, 3, 3, new SolidColorBrush(Colors.Gray)));
+            this.Add(new Square(58, 3, 11, new SolidColorBrush(Colors.Gray)));
+            this.Add(new Square(59, 10, 11, new SolidColorBrush(Colors.Gray)));
+            this.Add(new Square(60, 10, 3, new SolidColorBrush(Colors.Gray)));
 
         }
 
@@ -98,6 +98,164 @@ namespace ProjectMEJN.Model
         {
             // get current square
             var square = this.FirstOrDefault(s => s.PlayersOnSquare.Contains(playerId));
+
+            if (playerId == 1)
+            {
+                if (square.PlayersOnSquare.Contains(2))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(2);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 58);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(2);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(3))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(3);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 59);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(3);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(4))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(4);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 60);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(4);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+            }
+            if (playerId == 2)
+            {
+                if (square.PlayersOnSquare.Contains(1))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(1);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 57);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(1);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(3))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(3);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 59);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(3);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(4))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(4);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 60);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(4);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+            }
+            if (playerId == 3)
+            {
+                if (square.PlayersOnSquare.Contains(2))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(2);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 58);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(2);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(1))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(1);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 57);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(1);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(4))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(4);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 60);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(4);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+            }
+            if (playerId == 4)
+            {
+                if (square.PlayersOnSquare.Contains(2))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(2);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 58);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(2);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(3))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(3);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 59);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(3);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+                if (square.PlayersOnSquare.Contains(1))
+                {
+                    // remove player from this square
+                    square.PlayersOnSquare.Remove(1);
+                    square.NotifyPropertyChanged("Content");
+                    var startSquare = this.FirstOrDefault(s => s.Id == 57);
+                    if (startSquare != null)
+                    {
+                        startSquare.PlayersOnSquare.Add(1);
+                        startSquare.NotifyPropertyChanged("Content");
+                    }
+                }
+            }
+
             if (square != null)
             {
                 int currentSquare = square.Id;
@@ -109,47 +267,13 @@ namespace ProjectMEJN.Model
                         // remove player from this square
                         square.PlayersOnSquare.Remove(playerId);
                         square.NotifyPropertyChanged("Content");
-                        //put player 1 on place
-                        if (playerId == 1)
+                        
+                        var startSquare = this.FirstOrDefault(s => s.Id == 1);
+                        if (startSquare != null)
                         {
-                            var startSquare = this.FirstOrDefault(s => s.Id == 1);
-                            if (startSquare != null)
-                            {
-                                startSquare.PlayersOnSquare.Add(playerId);
-                                startSquare.NotifyPropertyChanged("Content");
-                            }
-                        }
-                        //put player 2 on place
-                        if (playerId == 2)
-                        {
-                            var startSquare = this.FirstOrDefault(s => s.Id == 15);
-                            if (startSquare != null)
-                            {
-                                startSquare.PlayersOnSquare.Add(playerId);
-                                startSquare.NotifyPropertyChanged("Content");
-                            }
-                        }
-                        //put player 3 on place
-                        if (playerId == 3)
-                        {
-                            var startSquare = this.FirstOrDefault(s => s.Id == 29);
-                            if (startSquare != null)
-                            {
-                                startSquare.PlayersOnSquare.Add(playerId);
-                                startSquare.NotifyPropertyChanged("Content");
-                            }
-                        }
-                        //put player 4 on place
-                        if (playerId == 4)
-                        {
-                            var startSquare = this.FirstOrDefault(s => s.Id == 43);
-                            if (startSquare != null)
-                            {
-                                startSquare.PlayersOnSquare.Add(playerId);
-                                startSquare.NotifyPropertyChanged("Content");
-                            }
-                        }
-
+                            startSquare.PlayersOnSquare.Add(playerId);
+                            startSquare.NotifyPropertyChanged("Content");
+                        }                   
                     }
                     else
                     //move the player around the board

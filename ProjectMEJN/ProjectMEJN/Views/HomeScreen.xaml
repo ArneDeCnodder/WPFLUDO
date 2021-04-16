@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMEJN.Views"
+        DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=HomeScreenViewModel}"
         mc:Ignorable="d"
       WindowStartupLocation="CenterScreen"
         Title="HomeScreen" Height="500" Width="700">
@@ -45,9 +46,9 @@
             <TextBlock FontSize="20" Text="Een opdracht voor het vak WPF"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical"  HorizontalAlignment="Center">
-            <Button Style="{StaticResource ButtonStyle}" Content="SPEEL EEN SPEL" Click="Button_Click_1" ></Button>
-            <Button Style="{StaticResource ButtonStyle}" Margin="30" Content="SPELREGELS" Click="Button_Click" ></Button>
-            <Button Style="{StaticResource ButtonStyle}"  Content="SPELBORD" Click="Button_Click_2" ></Button>
+            <Button Style="{StaticResource ButtonStyle}" Content="VOEG SPELERS TOE" Command="{Binding OpenSpelers}" ></Button>
+            <Button Style="{StaticResource ButtonStyle}" Margin="20" Content="BEKIJK SPELREGELS" Command="{Binding OpenSpelregels}"></Button>
+            <Button Style="{StaticResource ButtonStyle}"  Margin="0 0 0 20" Content="SPEEL EEN SPEL" Command="{Binding OpenSpellen}" ></Button>
         </StackPanel>
     </Grid>
 </Window>

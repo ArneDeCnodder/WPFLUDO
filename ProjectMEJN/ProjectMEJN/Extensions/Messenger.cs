@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMEJN.Extensions
 {
-    class Messenger
+    public class Messenger
     {
         private static readonly object CreationLock = new object();
         private static readonly ConcurrentDictionary<MessengerKey, object> Dictionary = new ConcurrentDictionary<MessengerKey, object>();

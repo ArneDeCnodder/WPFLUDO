@@ -12,11 +12,13 @@ namespace ProjectMEJN.ViewModel
 {
     class SpelSpelerPionViewModel: BaseViewModel
     {
+        private DialogService dialogService;
         public SpelSpelerPionViewModel()
         {
             GeefSpelers();
             GeefSpelSpelers();
             KoppelenCommands();
+            dialogService = new DialogService();
             Messenger.Default.Register<Spel>(this, OnspelReceived);
         }
         private Spel huidigSpel;
@@ -95,6 +97,7 @@ namespace ProjectMEJN.ViewModel
             Inschrijven2Command = new BaseCommand(InschrijvenSpeler2);
             Inschrijven3Command = new BaseCommand(InschrijvenSpeler3);
             Inschrijven4Command = new BaseCommand(InschrijvenSpeler4);
+            OpenSpelbordCommand = new BaseCommand(OpenSpelbord);
             //UitschrijvenCommand = new BaseCommand(UitschrijvenSpeler);
 
         }
@@ -102,6 +105,7 @@ namespace ProjectMEJN.ViewModel
         public ICommand Inschrijven2Command { get; set; }
         public ICommand Inschrijven3Command { get; set; }
         public ICommand Inschrijven4Command { get; set; }
+        public ICommand OpenSpelbordCommand { get; set; }
 
 
 
@@ -112,6 +116,10 @@ namespace ProjectMEJN.ViewModel
 
             Spelers = new ObservableCollection<Speler>(spelerDS.GetSpelers());
         }
+        private void OpenSpelbord()
+        {
+            dialogService.ShowBord();
+        }
         private void GeefSpelSpelers()
         {
             int spelid = HuidigSpel.ID;
@@ -121,18 +129,6 @@ namespace ProjectMEJN.ViewModel
             SpelSpelers = new ObservableCollection<SpelSpelerPion>(spelspelerDS.GetSpelSpelers(spelid));
         }
 
-        //private void UitschrijvenSpeler()
-        //{
-        //    if (HuidigeSpeler != null)
-        //    {
-        //        SpelSpelerPionDataService spelspelerDS = new SpelSpelerPionDataService();
-        //        spelspelerDS.VerwijderSpelSpeler(HuidigeSpeler);
-
-        //        Refresh
-        //        GeefSpelers();
-        //        GeefSpelSpelers();
-        //    }
-        //}
 
         private void InschrijvenSpeler1()
         {
@@ -143,7 +139,7 @@ namespace ProjectMEJN.ViewModel
                 int id = HuidigeSpelspeler.ID;
                 var dezespeler = new SpelSpelerPion();
                 SpelSpelerPionDataService spelspelerDS = new SpelSpelerPionDataService();
-                spelspelerDS.UpdateSpelSpeler(dezespeler,id,aantal,spelid);
+                spelspelerDS.UpdateSpelSpeler1(dezespeler,id,aantal,spelid);
 
                 //Refresh
                 GeefSpelSpelers();
@@ -160,7 +156,7 @@ namespace ProjectMEJN.ViewModel
                 int id = HuidigeSpelspeler.ID;
                 var dezespeler = new SpelSpelerPion();
                 SpelSpelerPionDataService spelspelerDS = new SpelSpelerPionDataService();
-                spelspelerDS.UpdateSpelSpeler(dezespeler, id, aantal, spelid);
+                spelspelerDS.UpdateSpelSpeler2(dezespeler, id, aantal, spelid);
 
                 //Refresh
                 GeefSpelSpelers();
@@ -177,7 +173,7 @@ namespace ProjectMEJN.ViewModel
                 int id = HuidigeSpelspeler.ID;
                 var dezespeler = new SpelSpelerPion();
                 SpelSpelerPionDataService spelspelerDS = new SpelSpelerPionDataService();
-                spelspelerDS.UpdateSpelSpeler(dezespeler, id, aantal, spelid);
+                spelspelerDS.UpdateSpelSpeler3(dezespeler, id, aantal, spelid);
 
                 //Refresh
                 GeefSpelSpelers();
@@ -194,7 +190,7 @@ namespace ProjectMEJN.ViewModel
                 int id = HuidigeSpelspeler.ID;
                 var dezespeler = new SpelSpelerPion();
                 SpelSpelerPionDataService spelspelerDS = new SpelSpelerPionDataService();
-                spelspelerDS.UpdateSpelSpeler(dezespeler, id, aantal, spelid);
+                spelspelerDS.UpdateSpelSpeler4(dezespeler, id, aantal, spelid);
 
                 //Refresh
                 GeefSpelSpelers();

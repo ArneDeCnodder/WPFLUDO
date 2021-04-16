@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectMEJN.Views"
-        xmlns:viewmodel="clr-namespace:ProjectMEJN.ViewModel"
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=SpelViewModel}"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="Spel"  Height="600" Width="700">
     <Window.Background>
         <RadialGradientBrush>
@@ -14,9 +14,7 @@
             <GradientStop Color="#EC808D" />
         </RadialGradientBrush>
     </Window.Background>
-    <Window.Resources>
-        <viewmodel:SpelViewModel x:Key="SpelViewModel"/>
-    </Window.Resources>
+    
 
     <Grid>
         <Grid.RowDefinitions>
@@ -27,13 +25,14 @@
 
         <TextBlock Style="{StaticResource Titel}" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Historiek van de spellen"></TextBlock>
 
-        <Grid Grid.Row="1" DataContext="{StaticResource SpelViewModel}">
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <ListView Grid.Column="0" 
+                      x:Name="ListViewSpel"
                   ItemsSource="{Binding Spellen}" 
                   SelectionMode="Single" 
                   SelectedItem="{Binding HuidigSpel}"
@@ -69,6 +68,6 @@
             </StackPanel>
 
         </Grid>
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="SPEEL" Command="{Binding VoegToeSpelers}" Click="Button_Click"></Button>
+        <Button Style="{StaticResource ButtonStyle}" IsEnabled="{Binding ElementName=ListViewSpel, Path=SelectedItems.Count}" Grid.Row="2" Content="SPEEL" Command="{Binding VoegToeSpelers}"></Button>
     </Grid>
 </Window>

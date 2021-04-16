@@ -23,12 +23,5 @@ namespace ProjectMEJN.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Window spelspeler = new SpelSpelerPion();
-            spelspeler.Show();
-            this.Close();
-        }
     }
 }
