@@ -5,6 +5,9 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using ProjectMEJN.Extensions;
 
 namespace ProjectMEJN.Model
 {
@@ -15,6 +18,29 @@ namespace ProjectMEJN.Model
         {
             CreateBoard();
             PutPlayersOnStart();
+            Messenger.Default.Register<Spel>(this, OnspelReceived);
+        }
+        private Spel huidigSpel;
+        public Spel HuidigSpel
+        {
+            get
+            {
+                if (huidigSpel == null)
+                {
+                    huidigSpel = new Spel();
+                }
+                return huidigSpel;
+            }
+
+            set
+            {
+                huidigSpel = value;
+                NotifyPropertyChanged();
+            }
+        }
+        private void OnspelReceived(Spel spel)
+        {
+            HuidigSpel = spel;
         }
 
         private void CreateBoard()
@@ -82,16 +108,56 @@ namespace ProjectMEJN.Model
 
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private SpelSpelerPion speler;
+        public SpelSpelerPion Speler
+        {
+            get
+            {
+                return speler;
+            }
+
+            set
+            {
+                speler = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         public void PutPlayersOnStart()
         {
-            var startSquare1 = this.FirstOrDefault(s => s.Id == 57);
-            var startSquare2 = this.FirstOrDefault(s => s.Id == 58);
-            var startSquare3 = this.FirstOrDefault(s => s.Id == 59);
-            var startSquare4 = this.FirstOrDefault(s => s.Id == 60);
-            startSquare1.PlayersOnSquare = new List<int>() { 1 };
-            startSquare2.PlayersOnSquare = new List<int>() { 2 };
-            startSquare3.PlayersOnSquare = new List<int>() { 3 };
-            startSquare4.PlayersOnSquare = new List<int>() { 4 };
+            
+            if(huidigSpel!=null)
+            {
+                int spelid = huidigSpel.ID;
+                BoardDataService boardgroenDS = new BoardDataService();
+                speler = boardgroenDS.GetSpecificspeler("Groen", spelid);
+                var startSquare1 = this.FirstOrDefault(s => s.Id == speler.Positie);
+
+                BoardDataService boardblauwDS = new BoardDataService();
+                speler = boardblauwDS.GetSpecificspeler("Blauw", spelid);
+                var startSquare2 = this.FirstOrDefault(s => s.Id == speler.Positie);
+
+                BoardDataService boardgeelDS = new BoardDataService();
+                speler = boardgeelDS.GetSpecificspeler("Geel", spelid);
+                var startSquare3 = this.FirstOrDefault(s => s.Id == speler.Positie);
+
+                BoardDataService boardroodDS = new BoardDataService();
+                speler = boardroodDS.GetSpecificspeler("Rood", spelid);
+                var startSquare4 = this.FirstOrDefault(s => s.Id == speler.Positie);
+                startSquare1.PlayersOnSquare = new List<int>() { 1 };
+                startSquare2.PlayersOnSquare = new List<int>() { 2 };
+                startSquare3.PlayersOnSquare = new List<int>() { 3 };
+                startSquare4.PlayersOnSquare = new List<int>() { 4 };
+            }
+            
         }
 
         public void MovePlayer(int playerId, int steps)
@@ -307,14 +373,6 @@ namespace ProjectMEJN.Model
                         }
                     }
                 }
-            }
-        }
-        public void PutOnStart1(int playerId)
-        {
-            var square = this.FirstOrDefault(s => s.PlayersOnSquare.Contains(playerId));
-            if (square != null)
-            {
-
             }
         }
     }

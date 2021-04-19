@@ -34,9 +34,7 @@ namespace ProjectMEJN.Model
             // SQL statement insert
             if (aantal < 16)
             {
-                for (int i = 1; i < 5; i++)
-                {
-                    int positienummer = 56 + i;
+                    int positienummer = 57;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ","+spelid+", " + positienummer + ", 'Groen',0)";
                     string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
                     string newsql = "If select count(*) from Spelspelerpion where spelerid='"+id+ "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
@@ -49,7 +47,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                }
+            
             }
             
             
@@ -59,9 +57,8 @@ namespace ProjectMEJN.Model
             // SQL statement insert
             if (aantal < 16)
             {
-                for (int i = 1; i < 5; i++)
-                {
-                    int positienummer = 60 + i;
+                
+                    int positienummer = 58;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Blauw',0)";
                     string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
                     string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
@@ -74,7 +71,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                }
+                
             }
 
 
@@ -85,9 +82,8 @@ namespace ProjectMEJN.Model
             // SQL statement insert
             if (aantal < 16)
             {
-                for (int i = 1; i < 5; i++)
-                {
-                    int positienummer = 64 + i;
+                
+                    int positienummer = 59;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Geel',0)";
                     string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
                     string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
@@ -100,7 +96,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                }
+                
             }
 
 
@@ -111,9 +107,8 @@ namespace ProjectMEJN.Model
             // SQL statement insert
             if (aantal < 16)
             {
-                for (int i = 1; i < 5; i++)
-                {
-                    int positienummer = 68 + i;
+                
+                    int positienummer = 60;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Rood',0)";
                     string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
                     string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
@@ -126,7 +121,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                }
+                
             }
 
 

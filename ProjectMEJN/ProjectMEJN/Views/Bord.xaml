@@ -82,6 +82,8 @@
             <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer2Command}">Verplaats P2</Button>
             <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer3Command}">Verplaats P3</Button>
             <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer4Command}">Verplaats P4</Button>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding StartSpelCommand}">Start het spel!</Button>
+
         </StackPanel>
     </Grid>
 

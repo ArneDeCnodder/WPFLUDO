@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMEJN.Model
 {
-    class Spel : BaseModel
+    public class Spel : BaseModel
     {
         private int id;
         private string naam;

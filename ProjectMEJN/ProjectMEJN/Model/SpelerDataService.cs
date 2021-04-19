@@ -30,6 +30,18 @@ namespace ProjectMEJN.Model
             return (List<Speler>)db.Query<Speler>(sql);
         }
 
+        public List<SpelSpelerPion> GetspecificSpelers(int spelerid)
+        {
+            // Stap 2 Dapper
+            // Uitschrijven SQL statement & bewaren in een string. 
+            string sql = "Select * from Spelspelerpion where spelerid = '"+spelerid+"' order by ID";
+
+            // Stap 3 Dapper
+            // Uitvoeren SQL statement op db instance 
+            // Type casten van het generieke return type naar een collectie van spelers
+            return (List<SpelSpelerPion>)db.Query<SpelSpelerPion>(sql);
+        }
+
         public void UpdateSpeler(Speler speler)
         {
             // SQL statement update 

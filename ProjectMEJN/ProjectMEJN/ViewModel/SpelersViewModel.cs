@@ -35,6 +35,21 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
+        private ObservableCollection<SpelSpelerPion> spelercheck;
+        public ObservableCollection<SpelSpelerPion> Spelercheck
+        {
+            get
+            {
+                return spelercheck;
+            }
+
+            set
+            {
+                spelercheck = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private Speler huidigeSpeler;
         public Speler HuidigeSpeler
         {
@@ -105,11 +120,20 @@ namespace ProjectMEJN.ViewModel
         {
             if (HuidigeSpeler != null)
             {
-                SpelerDataService spelerDS = new SpelerDataService();
-                spelerDS.DeleteSpeler(HuidigeSpeler);
+                SpelerDataService spelerDScheck =
+               new SpelerDataService();
+                int spelerid = HuidigeSpeler.ID;
+                Spelercheck = new ObservableCollection<SpelSpelerPion>(spelerDScheck.GetspecificSpelers(spelerid));
 
-                //Refresh
-                GeefSpelers();
+                if(Spelercheck.Count == 0)
+                {
+                    SpelerDataService spelerDS = new SpelerDataService();
+                    spelerDS.DeleteSpeler(HuidigeSpeler);
+
+                    //Refresh
+                    GeefSpelers();
+
+                }               
             }
         }
     }

@@ -53,7 +53,7 @@
         <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="30 0 30 0">
             <Label Foreground="White" Content="Zijn er 4 spelers toegevoegd?"></Label>
             <Label Foreground="White" Content="Progressbar:"></Label>
-            <ProgressBar  Height="30" Value="{Binding SpelSpelers.Count, Mode=OneWay}" Maximum="16"></ProgressBar>
+            <ProgressBar  Height="30" Value="{Binding SpelSpelers.Count, Mode=OneWay}" Maximum="4"></ProgressBar>
         </StackPanel>
         <!--<ListView Grid.Column="2"
                   ItemsSource="{Binding SpelSpelers}" 
