@@ -160,7 +160,7 @@ namespace ProjectMEJN.Model
             
         }
 
-        public void MovePlayer(int playerId, int steps)
+        public void MovePlayer(string kleur, int playerId, int steps)
         {
             // get current square
             var square = this.FirstOrDefault(s => s.PlayersOnSquare.Contains(playerId));
@@ -177,6 +177,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(2);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 58);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(3))
@@ -189,6 +191,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(3);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 59);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(4))
@@ -201,6 +205,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(4);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 60);
                     }
                 }
             }
@@ -216,6 +222,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(1);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 57);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(3))
@@ -228,6 +236,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(3);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 59);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(4))
@@ -240,6 +250,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(4);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 60);
                     }
                 }
             }
@@ -255,6 +267,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(2);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 58);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(1))
@@ -267,6 +281,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(1);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 57);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(4))
@@ -279,6 +295,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(4);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 60);
                     }
                 }
             }
@@ -294,6 +312,9 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(2);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 58);
+
                     }
                 }
                 if (square.PlayersOnSquare.Contains(3))
@@ -306,6 +327,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(3);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 59);
                     }
                 }
                 if (square.PlayersOnSquare.Contains(1))
@@ -318,6 +341,8 @@ namespace ProjectMEJN.Model
                     {
                         startSquare.PlayersOnSquare.Add(1);
                         startSquare.NotifyPropertyChanged("Content");
+                        BoardDataService boardDS = new BoardDataService();
+                        boardDS.UpdatePosition(kleur, HuidigSpel.ID, 57);
                     }
                 }
             }
@@ -339,6 +364,8 @@ namespace ProjectMEJN.Model
                         {
                             startSquare.PlayersOnSquare.Add(playerId);
                             startSquare.NotifyPropertyChanged("Content");
+                            BoardDataService boardDS = new BoardDataService();
+                            boardDS.UpdatePosition(kleur, HuidigSpel.ID, 1);
                         }                   
                     }
                     else
@@ -353,6 +380,8 @@ namespace ProjectMEJN.Model
                         {
                             newSquare.PlayersOnSquare.Add(playerId);
                             newSquare.NotifyPropertyChanged("Content");
+                            BoardDataService boardDS = new BoardDataService();
+                            boardDS.UpdatePosition(kleur, HuidigSpel.ID, currentSquare + steps);
                         }
                     }
                 }
@@ -370,6 +399,8 @@ namespace ProjectMEJN.Model
                         {
                             newSquare.PlayersOnSquare.Add(playerId);
                             newSquare.NotifyPropertyChanged("Content");
+                            BoardDataService boardDS = new BoardDataService();
+                            boardDS.UpdatePosition(kleur, HuidigSpel.ID, currentSquare + steps);
                         }
                     }
                 }

@@ -32,7 +32,7 @@ namespace ProjectMEJN.Model
         public void UpdateSpelSpeler1(SpelSpelerPion spelspelerpion, int id,int aantal, int spelid)
         {
             // SQL statement insert
-            if (aantal < 16)
+            if (aantal < 4)
             {
                     int positienummer = 57;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ","+spelid+", " + positienummer + ", 'Groen',0)";
@@ -55,7 +55,7 @@ namespace ProjectMEJN.Model
         public void UpdateSpelSpeler2(SpelSpelerPion spelspelerpion, int id, int aantal, int spelid)
         {
             // SQL statement insert
-            if (aantal < 16)
+            if (aantal < 4)
             {
                 
                     int positienummer = 58;
@@ -80,7 +80,7 @@ namespace ProjectMEJN.Model
         public void UpdateSpelSpeler3(SpelSpelerPion spelspelerpion, int id, int aantal, int spelid)
         {
             // SQL statement insert
-            if (aantal < 16)
+            if (aantal < 4)
             {
                 
                     int positienummer = 59;
@@ -105,7 +105,7 @@ namespace ProjectMEJN.Model
         public void UpdateSpelSpeler4(SpelSpelerPion spelspelerpion, int id, int aantal, int spelid)
         {
             // SQL statement insert
-            if (aantal < 16)
+            if (aantal < 4)
             {
                 
                     int positienummer = 60;

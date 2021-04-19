@@ -15,11 +15,12 @@ namespace ProjectMEJN.ViewModel
         private DialogService dialogService;
         public SpelSpelerPionViewModel()
         {
+            Messenger.Default.Register<Spel>(this, OnspelReceived);
             GeefSpelers();
             GeefSpelSpelers();
             KoppelenCommands();
             dialogService = new DialogService();
-            Messenger.Default.Register<Spel>(this, OnspelReceived);
+            
         }
         private Spel huidigSpel;
         public Spel HuidigSpel
@@ -118,7 +119,11 @@ namespace ProjectMEJN.ViewModel
         }
         private void OpenSpelbord()
         {
-            dialogService.ShowBord();
+            if( SpelSpelers.Count == 4)
+            {
+                dialogService.ShowBord();
+            }
+            
         }
         private void GeefSpelSpelers()
         {

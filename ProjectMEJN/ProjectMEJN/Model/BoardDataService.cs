@@ -33,46 +33,14 @@ namespace ProjectMEJN.Model
                 
                 return db.QuerySingle<SpelSpelerPion>(sql);
             }
-            public void UpdateSpel(Spel spel)
+            public void UpdatePosition(string kleur, int spelid,int positie)
             {
                 // SQL statement update 
-                string sql = "Update Spel set Naam = @naam, Datum = @datum where id = @id";
+                string sql = "Update Spelspelerpion set  Positie = "+positie+" where kleur like '%" + kleur + "%' and spelid like " + spelid + "";
 
                 // Uitvoeren SQL statement en doorgeven parametercollectie
-                db.Execute(sql, new
-                {
-                    spel.Naam,
-                    spel.Datum,
-                    spel.ID
-                });
+                db.Execute(sql, new{kleur, spelid,positie});
             }
-            public void AddSpel(Spel spel)
-            {
-                // SQL statement insert
-                string sql = "Insert into Spel (naam, datum) values (@naam, @datum)";
-
-                // Uitvoeren SQL statement en doorgeven parametercollectie
-                db.Execute(sql, new
-                {
-                    spel.Naam,
-                    spel.Datum
-                });
-            }
-
-            public void DeleteSpel(Spel spel)
-            {
-                string spelpion = "Delete Spelspelerpion where spelid=@id";
-
-                // Uitvoeren SQL statement en doorgeven parametercollectie
-                db.Execute(spelpion, new { spel.ID });
-
-                // SQL statement delete 
-                string sql = "Delete Spel where id = @id";
-
-                // Uitvoeren SQL statement en doorgeven parametercollectie
-                db.Execute(sql, new { spel.ID });
-
-
-            }
+            
     }
 }

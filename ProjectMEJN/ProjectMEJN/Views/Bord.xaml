@@ -25,7 +25,11 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Margin="50 10 90 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.RowSpan="2" Margin="50 10 90 0">
             <ItemsControl ItemsSource="{Binding Board}"
 			ItemTemplate="{StaticResource SquareTemplate}" >
                 <ItemsControl.ItemsPanel>
@@ -77,13 +81,26 @@
             </ItemsControl>
 
         </StackPanel>
-        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer1Command}">Verplaats P1</Button>
-            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer2Command}">Verplaats P2</Button>
-            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer3Command}">Verplaats P3</Button>
-            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer4Command}">Verplaats P4</Button>
-            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding StartSpelCommand}">Start het spel!</Button>
+       
 
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Padding="10 20 0 0" Content="Druk enkel op me op te starten" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="0 0 0 50" Width="250" Command="{Binding StartSpelCommand}">Start het spel!</Button>
+
+            <Label Padding="10 0 0 0" Content="Speler 1:" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer1Command}">Verplaats P1</Button>
+            <Label Padding="10 0 0 0" Content="Speler 2:" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer2Command}">Verplaats P2</Button>
+            <Label Padding="10 0 0 0" Content="Speler 3:" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer3Command}">Verplaats P3</Button>
+            <Label Padding="10 0 0 0" Content="Speler 4:" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="10" Width="250" Command="{Binding MovePlayer4Command}">Verplaats P4</Button>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Padding="20" Header="Dobbelsteen gerold" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15">
+                <Image Source="{Binding Dobbelsteen.Afbeelding}" Width="199" />
+            </GroupBox>
         </StackPanel>
     </Grid>
 

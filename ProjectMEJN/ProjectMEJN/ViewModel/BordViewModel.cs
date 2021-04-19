@@ -25,6 +25,19 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
+        private Dobbelsteen dobbelsteen;
+        public Dobbelsteen Dobbelsteen
+        {
+            get
+            {
+                return dobbelsteen;
+            }
+            set
+            {
+                dobbelsteen = value;
+                NotifyPropertyChanged();
+            }
+        }
         public ICommand MovePlayer1Command { get; set; }
         public ICommand MovePlayer2Command { get; set; }
         public ICommand MovePlayer3Command { get; set; }
@@ -35,6 +48,13 @@ namespace ProjectMEJN.ViewModel
         {
             Board = new Board();
             KoppelenCommands();
+            LeesGegevens();
+        }
+
+       
+        private void LeesGegevens()
+        {
+            Dobbelsteen = new Dobbelsteen();
         }
 
         private void KoppelenCommands()
@@ -48,34 +68,38 @@ namespace ProjectMEJN.ViewModel
 
         private void MovePlayer1()
         {
-            // better use the dice model
-            Random random = new Random();
-            string kleur = "groen";
-            Board.MovePlayer(1, random.Next(1, 7));
-        }
-
-        private void StartSpel()
-        {
-            
+            Dobbelsteen.Gooi();
+            int ogen = Dobbelsteen.Ogen;
+            string kleur = "Groen";
+            Board.MovePlayer(kleur,1, ogen);
         }
 
         private void MovePlayer2()
         {
-            Random random = new Random();
-            string kleur = "blauw";
-            Board.MovePlayer(2, random.Next(1, 7));
+            Dobbelsteen.Gooi();
+            int ogen = Dobbelsteen.Ogen;
+            string kleur = "Blauw";
+            Board.MovePlayer(kleur,2, ogen);
         }
         private void MovePlayer3()
         {
-            Random random = new Random();
-            string kleur = "geel";
-            Board.MovePlayer(3, random.Next(1, 7));
+            Dobbelsteen.Gooi();
+            int ogen = Dobbelsteen.Ogen;
+            string kleur = "Geel";
+            Board.MovePlayer(kleur,3, ogen);
         }
         private void MovePlayer4()
         {
-            Random random = new Random();
-            string kleur = "rood";
-            Board.MovePlayer(4, random.Next(1, 7));
+            Dobbelsteen.Gooi();
+            int ogen = Dobbelsteen.Ogen;
+            string kleur = "Rood";
+            Board.MovePlayer(kleur,4, ogen);
         }
+        private void StartSpel()
+        {
+            Board.PutPlayersOnStart();
+        }
+
+
     }
 }
