@@ -11,6 +11,8 @@ namespace ProjectMEJN.ViewModel
     class HomeScreenViewModel
     {
         private DialogService dialogService;
+
+        //constructor
         public HomeScreenViewModel()
         {
             KoppelenCommands();
@@ -28,16 +30,21 @@ namespace ProjectMEJN.ViewModel
         public ICommand OpenSpellen { get; set; }
         public ICommand OpenSpelregels { get; set; }
 
+        //open de view Spelers.xaml en sluit huidige view
         private void Openspeler()
         {
             dialogService.ShowSpelers();
             
         }
+
+        //open de view Spel.xaml en sluit huidige view
         private void Openspel()
         {
             dialogService.ShowSpel();
 
         }
+
+        //open de view SpelRegels.xaml en sluit huidige view
         private void Openspelregel()
         {
             dialogService.ShowSpelregels();

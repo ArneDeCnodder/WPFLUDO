@@ -22,7 +22,7 @@ namespace ProjectMEJN.Model
         {
             // Stap 2 Dapper
             // Uitschrijven SQL statement & bewaren in een string. 
-            string sql = "Select * from Spelspelerpion where Spelid like '"+spelid+ "'order by ID";
+            string sql = "Select * from Spelspelerpion where Spelid like '"+spelid+"'order by ID";
 
             // Stap 3 Dapper
             // Uitvoeren SQL statement op db instance 
@@ -36,8 +36,7 @@ namespace ProjectMEJN.Model
             {
                     int positienummer = 57;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ","+spelid+", " + positienummer + ", 'Groen',0)";
-                    string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
-                    string newsql = "If select count(*) from Spelspelerpion where spelerid='"+id+ "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
+                    
                     // Uitvoeren SQL statement en doorgeven parametercollectie
                     db.Execute(sql, new
                     {
@@ -60,9 +59,8 @@ namespace ProjectMEJN.Model
                 
                     int positienummer = 58;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Blauw',0)";
-                    string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
-                    string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
-                    // Uitvoeren SQL statement en doorgeven parametercollectie
+                    
+                // Uitvoeren SQL statement en doorgeven parametercollectie
                     db.Execute(sql, new
                     {
                         spelspelerpion.SpelerId,
@@ -85,9 +83,8 @@ namespace ProjectMEJN.Model
                 
                     int positienummer = 59;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Geel',0)";
-                    string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
-                    string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
-                    // Uitvoeren SQL statement en doorgeven parametercollectie
+                    
+                // Uitvoeren SQL statement en doorgeven parametercollectie
                     db.Execute(sql, new
                     {
                         spelspelerpion.SpelerId,
@@ -96,10 +93,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                
             }
-
-
         }
 
         public void UpdateSpelSpeler4(SpelSpelerPion spelspelerpion, int id, int aantal, int spelid)
@@ -110,9 +104,8 @@ namespace ProjectMEJN.Model
                 
                     int positienummer = 60;
                     string sql = "Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + "," + spelid + ", " + positienummer + ", 'Rood',0)";
-                    string nieuwsql = "insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) Select " + id + " Where not exists(select * from Spelspelerpion where spelerid = " + id + ")";
-                    string newsql = "If select count(*) from Spelspelerpion where spelerid='" + id + "' having count(*)<4 Begin Insert into Spelspelerpion (spelerid, spelid, positie, Kleur, IsBinnen) values (" + id + ", 1, " + positienummer + ", 'Blauw',0) End";
-                    // Uitvoeren SQL statement en doorgeven parametercollectie
+                    
+                // Uitvoeren SQL statement en doorgeven parametercollectie
                     db.Execute(sql, new
                     {
                         spelspelerpion.SpelerId,
@@ -121,14 +114,7 @@ namespace ProjectMEJN.Model
                         spelspelerpion.Kleur,
                         spelspelerpion.IsBinnen
                     });
-                
             }
-
-
         }
-
-
     }
-
-
 }

@@ -45,27 +45,35 @@ namespace ProjectMEJN.Model
         public void UpdateSpeler(Speler speler)
         {
             // SQL statement update 
-            string sql = "Update Speler set Voornaam = @voornaam, familienaam = @familienaam where id = @id";
+            string sql = "BEGIN IF NOT EXISTS(SELECT* FROM Speler WHERE Voornaam = @voornaam AND Familienaam = @familienaam) BEGIN Update Speler set Voornaam = @voornaam, familienaam = @familienaam where id = @id END END";
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
-            db.Execute(sql, new
+            if (speler.Voornaam != "" && speler.Familienaam != "")
             {
-                speler.Voornaam,
-                speler.Familienaam,
-                speler.ID
-            });
+                db.Execute(sql, new
+                {
+                    speler.Voornaam,
+                    speler.Familienaam,
+                    speler.ID
+                });
+            }
+            
         }
         public void AddSpeler(Speler speler)
         {
             // SQL statement insert
-            string sql = "Insert into Speler (voornaam, familienaam) values (@voornaam, @familienaam)";
+            string sql = "BEGIN IF NOT EXISTS(SELECT* FROM Speler WHERE Voornaam = @voornaam AND Familienaam = @familienaam) BEGIN INSERT INTO Speler(Voornaam, Familienaam) values(@voornaam, @familienaam) END END";
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
-            db.Execute(sql, new
+            if(speler.Voornaam != null && speler.Familienaam != null)
             {
-                speler.Voornaam,
-                speler.Familienaam
-            });
+                db.Execute(sql, new
+                {
+                    speler.Voornaam,
+                    speler.Familienaam
+                });
+            }
+            
         }
 
         public void DeleteSpeler(Speler speler)

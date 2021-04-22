@@ -14,18 +14,7 @@
             <GradientStop Color="#EC808D" />
         </RadialGradientBrush>
     </Window.Background>
-    <Window.Resources>
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#EC808D"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Width" Value="100"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Gill Sans"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        
-    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
@@ -44,13 +33,13 @@
                     <Setter Property="FontSize" Value="12"></Setter>
                 </Style>
             </StackPanel.Resources>
-            <TextBlock Text="Elke speler kiest een kleur en plaatst alle vier de pionnen op de vakken (in matchende kleur) aan de rand van het speelbord. Bepaal wie als eerste mag beginnen. Dit kun je doen door iedereen één keer te laten gooien met de dobbelsteen. Degene met de hoogste worp begint. Daarna speel je met de klok mee."></TextBlock>
-            <TextBlock Text="Een pion van het speelbord slaan Wanneer meerdere spelers pionnen op het bord hebben staan, wordt het spel een tikje gevaarlijker. Indien een pion op een reeds bezet vakje terechtkomt, moet de pion die daar eerder stond het veld ruimen. Deze geslagen pion wordt teruggezet op een van de vier gekleurde vakken aan de rand van het speelbord. Dit betekent dat de 'geslagen speler' opnieuw 6 moet gooien en met die pion weer helemaal opnieuw moet beginnen. Snap je al waar de naam van het spel vandaan komt?"></TextBlock>
-            <TextBlock Text="Het verplaatsen van pionnen Indien je eerste pion het echte speelbord heeft betreden, mag je tijdens jouw beurt weer met de dobbelsteen gooien en je pion verplaatsen. Hoe hoger je gooit, des te meer stappen je vooruit mag zetten en hoe eerder je bij het thuishonk bent.   Heb je al een pion in het spel en gooi je weer 6? Dan mag je kiezen of je met de pion 6 stappen vooruit zet óf een nieuw pion op het startvakje plaatst. Als alle 4 de pionnen van de eigen kleur al in het spel zijn, blijft er maar één optie over."></TextBlock>
-            <TextBlock Text="Mens Erger Je Niet regels thuishonk Het einddoel van het spel is het thuishonk (in de eigen kleur) in het midden van het speelbord. Er gelden specifieke Mens Erger Je Niet! regels voor het binnenkomen in het thuishonk. Ben je na een heel rondje dichtbij het thuishonk? Dan moet de worp jouw pion op een leeg vakje in het thuishonk laten eindigen. Is het vakje reeds bezet door een andere pion van jezelf? Dan moet je op jouw volgende beurt wachten. Gooi je meer ogen dan dat er vakjes over zijn, tel dan vanaf het einde terug. En nu maar hopen dat jouw pion met de finish in zicht niet van zijn plek wordt geslagen!  Wie als eerste alle 4 zijn/haar pionnen in het thuishonk weet te krijgen, wint het bordspel."></TextBlock>
+            <TextBlock Text="Elke speler kiest een kleur en zijn pion wordt automatisch aan de rand van het speelbord geplaatst. Speler 1 begint als eerste. Hij begint het spel met te werpen met de dobbelsteen, daarna is speler 2 aan bod, dan speler 3 en dan speler 4."></TextBlock>
+            <TextBlock Text="Wanneer meerdere spelers een pion op het bord hebben staan, wordt het spel een tikje gevaarlijker. Indien een pion op een reeds bezet vakje terechtkomt, moet de pion die daar eerder stond het veld ruimen. De speler mag nog eens werpen met de dobbelsteen. De geslagen pion wordt teruggezet op zijn beginvak aan de rand van het speelbord. Dit betekent dat de 'geslagen speler' opnieuw 6 moet gooien en met die pion weer helemaal opnieuw moet beginnen. Snap je al waar de naam van het spel vandaan komt? De speler "></TextBlock>
+            <TextBlock Text="Indien je eerste pion het echte speelbord heeft betreden, mag je tijdens jouw beurt weer met de dobbelsteen gooien en je pion verplaatsen. Hoe hoger je gooit, des te meer stappen je vooruit mag zetten en hoe eerder je bij het thuishonk bent. Heb je al een pion in het spel en gooi je weer 6? Dan mag je gewoon je pion 6 stappen vooruit zetten."></TextBlock>
+            <TextBlock Text="Het einddoel van het spel is de thuishonk op het vakje 56 van het speelbord. Er gelden specifieke Mens Erger Je Niet! regels voor het binnenkomen in het thuishonk. Ben je na een heel rondje dichtbij het thuishonk? Dan moet de worp jouw pion exact op het vakje 56 laten eindigen. Zo niet, wordt je pion weer naar een beginvak geplaatst. Je moet dus weer 6 gooien om je pion op het bord te plaatsen. Wie als eerste zijn pion binnen kan krijgen, wint het bordspel."></TextBlock>
        
         </StackPanel>
-        <Button Style="{StaticResource ButtonStyle}" Grid.Row="2" Content="HOME" Command="{Binding BackHomeCommand}"></Button>
+        <Button Style="{StaticResource ButtonStyle}" Width="175" Grid.Row="2" Content="HOME" Command="{Binding BackHomeCommand}"></Button>
         
     </Grid>
 </Window>

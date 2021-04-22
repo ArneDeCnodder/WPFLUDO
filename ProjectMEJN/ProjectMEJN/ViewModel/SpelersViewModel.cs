@@ -13,13 +13,7 @@ namespace ProjectMEJN.ViewModel
     public class SpelersViewModel: BaseViewModel
     {
         private DialogService dialogService;
-        public SpelersViewModel()
-        {
-            GeefSpelers();
-            KoppelenCommands();
-            dialogService = new DialogService();
-        }
-
+        
         private ObservableCollection<Speler> spelers;
         public ObservableCollection<Speler> Spelers
         {
@@ -50,6 +44,7 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
+        
         private Speler huidigeSpeler;
         public Speler HuidigeSpeler
         {
@@ -67,6 +62,14 @@ namespace ProjectMEJN.ViewModel
                 huidigeSpeler = value;
                 NotifyPropertyChanged();
             }
+        }
+
+        //constructor
+        public SpelersViewModel()
+        {
+            GeefSpelers();
+            KoppelenCommands();
+            dialogService = new DialogService();
         }
         private void KoppelenCommands()
         {
@@ -100,8 +103,6 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
-
-
         public void AddSpeler()
         {
             SpelerDataService spelerDS = new SpelerDataService();
@@ -109,11 +110,6 @@ namespace ProjectMEJN.ViewModel
 
             //Refresh
             GeefSpelers();
-        }
-
-        public void TerugHome()
-        {
-            dialogService.ShowHome();
         }
 
         public void DeleteSpeler()
@@ -135,6 +131,12 @@ namespace ProjectMEJN.ViewModel
 
                 }               
             }
+        }
+
+        //open de view HomeScreen.xaml en sluit huidige view
+        public void TerugHome()
+        {
+            dialogService.ShowHome();
         }
     }
 }

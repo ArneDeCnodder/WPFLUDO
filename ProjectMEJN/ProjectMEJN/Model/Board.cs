@@ -13,22 +13,19 @@ namespace ProjectMEJN.Model
 {
     public class Board : ObservableCollection<Square>
     {
-
+        //constructor
         public Board()
         {
             CreateBoard();
             PutPlayersOnStart();
             Messenger.Default.Register<Spel>(this, OnspelReceived);
         }
+        // Huidigspel van SpelViewModel
         private Spel huidigSpel;
         public Spel HuidigSpel
         {
             get
             {
-                if (huidigSpel == null)
-                {
-                    huidigSpel = new Spel();
-                }
                 return huidigSpel;
             }
 
@@ -42,6 +39,8 @@ namespace ProjectMEJN.Model
         {
             HuidigSpel = spel;
         }
+
+        //creëer het spelbord
 
         private void CreateBoard()
         {
@@ -115,6 +114,8 @@ namespace ProjectMEJN.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        //Pionnen van alle spelers vanuit SpelSpelerPionViewModel
+
         private SpelSpelerPion speler;
         public SpelSpelerPion Speler
         {
@@ -130,7 +131,7 @@ namespace ProjectMEJN.Model
             }
         }
 
-
+        //zet de pionnen op hun positie die overeenkomt met positie in database
         public void PutPlayersOnStart()
         {
             
@@ -160,6 +161,7 @@ namespace ProjectMEJN.Model
             
         }
 
+        //verplaats de speler
         public void MovePlayer(string kleur, int playerId, int steps)
         {
             // get current square

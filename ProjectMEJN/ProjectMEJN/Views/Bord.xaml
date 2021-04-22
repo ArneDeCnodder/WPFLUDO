@@ -81,7 +81,7 @@
             </ItemsControl>
 
         </StackPanel>
-       
+
 
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Padding="10 20 0 0" Content="Druk enkel op me op te starten" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
@@ -103,7 +103,4 @@
             </GroupBox>
         </StackPanel>
     </Grid>
-
-    
-    
 </Window>

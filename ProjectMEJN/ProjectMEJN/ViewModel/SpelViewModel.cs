@@ -14,6 +14,8 @@ namespace ProjectMEJN.ViewModel
     class SpelViewModel: BaseViewModel
     {
         private DialogService dialogService;
+
+        //constructor
         public SpelViewModel()
         {
             GeefSpellen();
@@ -55,6 +57,15 @@ namespace ProjectMEJN.ViewModel
                 NotifyPropertyChanged();
             }
         }
+
+        private void GeefSpellen()
+        {
+            //instantiëren dataservice
+            SpelDataService spelDS =
+               new SpelDataService();
+
+            Spellen = new ObservableCollection<Spel>(spelDS.GetSpellen());
+        }
         private void KoppelenCommands()
         {
             WijzigenCommand = new BaseCommand(WijzigenSpel);
@@ -67,14 +78,7 @@ namespace ProjectMEJN.ViewModel
         public ICommand ToevoegenCommand { get; set; }
         public ICommand VoegToeSpelers { get; set; }
 
-        private void GeefSpellen()
-        {
-            //instantiëren dataservice
-            SpelDataService spelDS =
-               new SpelDataService();
-
-            Spellen = new ObservableCollection<Spel>(spelDS.GetSpellen());
-        }
+        
         public void WijzigenSpel()
         {
             if (HuidigSpel != null)
@@ -87,18 +91,6 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
-
-
-        public void AddSpel()
-        {
-            SpelDataService spelDS = new SpelDataService();
-            spelDS.AddSpel(HuidigSpel);
-
-            //Refresh
-            GeefSpellen();
-        }
-
-
         public void DeleteSpel()
         {
             if (HuidigSpel != null)
@@ -110,14 +102,23 @@ namespace ProjectMEJN.ViewModel
                 GeefSpellen();
             }
         }
+
+        public void AddSpel()
+        {
+            SpelDataService spelDS = new SpelDataService();
+            spelDS.AddSpel(HuidigSpel);
+
+            //Refresh
+            GeefSpellen();
+        }
+
+        //open de view SpelSpelerPion.xaml en sluit huidige view        
         private void OpenSpelSpelers()
         {
-            if (HuidigSpel != null)
-            {
+            
                 Messenger.Default.Send<Spel>(HuidigSpel);
 
                 dialogService.ShowSpelSpelerPion();
-            }
         }
     }
 }

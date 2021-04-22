@@ -11,6 +11,8 @@ namespace ProjectMEJN.ViewModel
     class SpelRegelsViewModel
     {
         private DialogService dialogService;
+
+        //constructor
         public SpelRegelsViewModel()
         {
             BackHomeCommand = new BaseCommand(TerugHome);
@@ -18,6 +20,7 @@ namespace ProjectMEJN.ViewModel
         }
         public ICommand BackHomeCommand { get; set; }
 
+        //open de view HomeScreen.xaml en sluit huidige view
         public void TerugHome()
         {
             dialogService.ShowHome();

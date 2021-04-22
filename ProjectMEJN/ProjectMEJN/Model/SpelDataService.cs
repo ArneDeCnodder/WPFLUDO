@@ -36,27 +36,36 @@ namespace ProjectMEJN.Model
         public void UpdateSpel(Spel spel)
         {
             // SQL statement update 
-            string sql = "Update Spel set Naam = @naam, Datum = @datum where id = @id";
+            string sql = "BEGIN IF NOT EXISTS (SELECT * FROM Spel WHERE Naam = @naam AND datum = @datum) BEGIN Update Spel set Naam = @naam, Datum = @datum where id = @id END END";
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
-            db.Execute(sql, new
+            if (spel.Naam != "" && spel.Datum != "")
             {
-                spel.Naam,
-                spel.Datum,
-                spel.ID
-            });
+                db.Execute(sql, new
+                {
+                    spel.Naam,
+                    spel.Datum,
+                    spel.ID
+                });
+            }
+              
         }
         public void AddSpel(Spel spel)
         {
             // SQL statement insert
-            string sql = "Insert into Spel (naam, datum) values (@naam, @datum)";
+            //string sql = "Insert into Spel (naam, datum) values (@naam, @datum)";
+            string newsql = "BEGIN IF NOT EXISTS (SELECT * FROM Spel WHERE Naam = @naam AND datum = @datum) BEGIN INSERT INTO Spel(naam, datum) values (@naam, @datum) END END";
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
-            db.Execute(sql, new
+            if (spel.Datum != null && spel.Naam != null)
             {
-                spel.Naam,
-                spel.Datum
-            });
+                db.Execute(newsql, new
+                {
+                    spel.Naam,
+                    spel.Datum
+                });
+            }
+            
         }
 
         public void DeleteSpel(Spel spel)
@@ -71,8 +80,7 @@ namespace ProjectMEJN.Model
 
             // Uitvoeren SQL statement en doorgeven parametercollectie
             db.Execute(sql, new { spel.ID });
-
-            
+                        
         }
     }
 }

@@ -13,15 +13,36 @@ namespace ProjectMEJN.ViewModel
     class SpelSpelerPionViewModel: BaseViewModel
     {
         private DialogService dialogService;
+
+        //constructor
         public SpelSpelerPionViewModel()
         {
             Messenger.Default.Register<Spel>(this, OnspelReceived);
+            dialogService = new DialogService();
             GeefSpelers();
             GeefSpelSpelers();
             KoppelenCommands();
-            dialogService = new DialogService();
-            
+
         }
+        private Speler huidigeSpelspeler;
+        public Speler HuidigeSpelspeler
+        {
+            get
+            {
+                if (huidigeSpelspeler == null)
+                {
+                    huidigeSpelspeler = new Speler();
+                }
+                return huidigeSpelspeler;
+            }
+
+            set
+            {
+                huidigeSpelspeler = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         private Spel huidigSpel;
         public Spel HuidigSpel
         {
@@ -44,6 +65,8 @@ namespace ProjectMEJN.ViewModel
         {
             HuidigSpel = spel;
         }
+                
+        
         private ObservableCollection<Speler> spelers;
         public ObservableCollection<Speler> Spelers
         {
@@ -74,56 +97,13 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
-        private Speler huidigeSpelspeler;
-        public Speler HuidigeSpelspeler
-        {
-            get
-            {
-                if (huidigeSpelspeler == null)
-                {
-                    huidigeSpelspeler = new Speler();
-                }
-                return huidigeSpelspeler;
-            }
-
-            set
-            {
-                huidigeSpelspeler = value;
-                NotifyPropertyChanged();
-            }
-        }
-        private void KoppelenCommands()
-        {
-            Inschrijven1Command = new BaseCommand(InschrijvenSpeler1);
-            Inschrijven2Command = new BaseCommand(InschrijvenSpeler2);
-            Inschrijven3Command = new BaseCommand(InschrijvenSpeler3);
-            Inschrijven4Command = new BaseCommand(InschrijvenSpeler4);
-            OpenSpelbordCommand = new BaseCommand(OpenSpelbord);
-            //UitschrijvenCommand = new BaseCommand(UitschrijvenSpeler);
-
-        }
-        public ICommand Inschrijven1Command { get; set; }
-        public ICommand Inschrijven2Command { get; set; }
-        public ICommand Inschrijven3Command { get; set; }
-        public ICommand Inschrijven4Command { get; set; }
-        public ICommand OpenSpelbordCommand { get; set; }
-
-
-
+        
         private void GeefSpelers()
         {
             //instantiëren dataservice
             SpelerDataService spelerDS = new SpelerDataService();
 
             Spelers = new ObservableCollection<Speler>(spelerDS.GetSpelers());
-        }
-        private void OpenSpelbord()
-        {
-            if( SpelSpelers.Count == 4)
-            {
-                dialogService.ShowBord();
-            }
-            
         }
         private void GeefSpelSpelers()
         {
@@ -133,7 +113,21 @@ namespace ProjectMEJN.ViewModel
 
             SpelSpelers = new ObservableCollection<SpelSpelerPion>(spelspelerDS.GetSpelSpelers(spelid));
         }
-
+        private void KoppelenCommands()
+        {
+            Inschrijven1Command = new BaseCommand(InschrijvenSpeler1);
+            Inschrijven2Command = new BaseCommand(InschrijvenSpeler2);
+            Inschrijven3Command = new BaseCommand(InschrijvenSpeler3);
+            Inschrijven4Command = new BaseCommand(InschrijvenSpeler4);
+            OpenSpelbordCommand = new BaseCommand(OpenSpelbord);
+            RefreshCommand = new BaseCommand(Refresh);
+        }
+        public ICommand Inschrijven1Command { get; set; }
+        public ICommand Inschrijven2Command { get; set; }
+        public ICommand Inschrijven3Command { get; set; }
+        public ICommand Inschrijven4Command { get; set; }
+        public ICommand OpenSpelbordCommand { get; set; }
+        public ICommand RefreshCommand { get; set; }
 
         private void InschrijvenSpeler1()
         {
@@ -202,6 +196,23 @@ namespace ProjectMEJN.ViewModel
                 GeefSpelers();
 
             }
+        }
+
+        //open de view Bord.xaml en sluit huidige view
+        private void OpenSpelbord()
+        {
+            if (SpelSpelers.Count == 4)
+            {
+                dialogService.ShowBord();
+            }
+
+        }
+
+        //refresh de view zodat data doorkomt
+        private void Refresh()
+        {
+            GeefSpelSpelers();
+            GeefSpelers();
         }
     }
 }

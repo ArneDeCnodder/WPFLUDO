@@ -7,7 +7,7 @@
         DataContext="{Binding Source={StaticResource ViewModelLocator},  Path=SpelSpelerPionViewModel}"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="SpelSpelerPion" Height="500" Width="800">
+        Title="SpelSpelerPion" Height="550" Width="800">
 
     <Window.Background>
         <RadialGradientBrush>
@@ -29,7 +29,12 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Style="{StaticResource Titel}" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Selecteer spelers voor het spel"></TextBlock>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Style="{StaticResource Titel}"  Padding="0" Text="Selecteer spelers voor het spel"></TextBlock>
+            <Button Name="button" Style="{StaticResource ButtonStyle}" Width="110" FontSize="15"  VerticalAlignment="Top" Command="{Binding RefreshCommand}"
+                Content="REFRESH" />
+        </StackPanel>
+        
 
         <Label Grid.Column="0" Grid.Row="1" Margin="30 0 0 0" Foreground="White">Overzicht van alle spelers:</Label>
         <ListView Grid.Column="0" Grid.Row="1" x:Name="listView1" Margin="30"
@@ -55,27 +60,7 @@
             <Label Foreground="White" Content="Progressbar:"></Label>
             <ProgressBar  Height="30" Value="{Binding SpelSpelers.Count, Mode=OneWay}" Maximum="4"></ProgressBar>
         </StackPanel>
-        <!--<ListView Grid.Column="2"
-                  ItemsSource="{Binding SpelSpelers}" 
-                  SelectionMode="Single" 
-                  SelectedItem="{Binding HuidigeSpelSpeler}"
-                  FontFamily="Montserrat" FontSize="15" Foreground="Black" Background="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="auto" 
-                                    Header="Spelid" 
-                                    DisplayMemberBinding="{Binding SpelId}" />
-                    <GridViewColumn Width="auto" 
-                                    Header="spelerid"
-                                    DisplayMemberBinding="{Binding SpelerId}" />
-                    <GridViewColumn Width="auto" 
-                                    Header="positie"
-                                    DisplayMemberBinding="{Binding Positie}" />
-
-                </GridView>
-            </ListView.View>
-        </ListView>-->
-
+        
         <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" >
 
             <Button Name="button1" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}"   Command="{Binding Inschrijven1Command}"
@@ -86,7 +71,7 @@
                 Content="&gt;&gt; Voeg Speler 3 toe (Geel)" />
             <Button Name="button4" Style="{StaticResource ButtonStyle}" FontSize="15" IsEnabled="{Binding ElementName=listView1, Path=SelectedItems.Count}" VerticalAlignment="Top"  Margin="3 10 3 10" Command="{Binding Inschrijven4Command}"
                 Content="&gt;&gt; Voeg Speler 4 toe (Rood)" />
-
+            
         </StackPanel >
         <Button Grid.Column="1" Grid.Row="2" Content="START HET SPEL" Style="{StaticResource ButtonStyle}" Margin="30" Command="{Binding OpenSpelbordCommand}"></Button>
 

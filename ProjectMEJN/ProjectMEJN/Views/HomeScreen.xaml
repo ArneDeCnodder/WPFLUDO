@@ -14,36 +14,16 @@
             <GradientStop Color="#EC808D" />
         </RadialGradientBrush>
     </Window.Background>
-    <Window.Resources>
-        
-        <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="#EC808D"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Width" Value="300"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontFamily" Value="Gill Sans"/>
-            <Setter Property="Padding" Value="10"/>
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-        
-        <Style TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="FontFamily" Value="Montserrat"></Setter>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="50"/>
-            <Setter Property="Padding" Value="10"/>
-        </Style>
-    </Window.Resources>
-
+   
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Welkom bij"></TextBlock>
-            <TextBlock FontFamily="Impact" FontSize="70" Text="Mens Erger Je Niet"></TextBlock>
-            <TextBlock FontSize="20" Text="Een opdracht voor het vak WPF"></TextBlock>
+            <TextBlock Style="{StaticResource Titel}" Text="Welkom bij"></TextBlock>
+            <TextBlock Style="{StaticResource Titel}" FontFamily="Impact" FontSize="70" Text="Mens Erger Je Niet"></TextBlock>
+            <TextBlock Style="{StaticResource Titel}" FontSize="20" Text="Een opdracht voor het vak WPF"></TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical"  HorizontalAlignment="Center">
             <Button Style="{StaticResource ButtonStyle}" Content="VOEG SPELERS TOE" Command="{Binding OpenSpelers}" ></Button>

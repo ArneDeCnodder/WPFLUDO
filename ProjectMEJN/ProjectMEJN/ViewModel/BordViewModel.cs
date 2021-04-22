@@ -9,8 +9,10 @@ using ProjectMEJN.Model;
 
 namespace ProjectMEJN.ViewModel
 {
+    
     public class BordViewModel : BaseViewModel
     {
+   
         private Board board;
         public Board Board
         {
@@ -25,6 +27,7 @@ namespace ProjectMEJN.ViewModel
             }
         }
 
+       
         private Dobbelsteen dobbelsteen;
         public Dobbelsteen Dobbelsteen
         {
@@ -38,19 +41,19 @@ namespace ProjectMEJN.ViewModel
                 NotifyPropertyChanged();
             }
         }
-        public ICommand MovePlayer1Command { get; set; }
-        public ICommand MovePlayer2Command { get; set; }
-        public ICommand MovePlayer3Command { get; set; }
-        public ICommand MovePlayer4Command { get; set; }
-        public ICommand StartSpelCommand { get; set; }
 
+        //constructor
         public BordViewModel()
         {
             Board = new Board();
             KoppelenCommands();
             LeesGegevens();
         }
-
+        public ICommand MovePlayer1Command { get; set; }
+        public ICommand MovePlayer2Command { get; set; }
+        public ICommand MovePlayer3Command { get; set; }
+        public ICommand MovePlayer4Command { get; set; }
+        public ICommand StartSpelCommand { get; set; }
        
         private void LeesGegevens()
         {
@@ -95,11 +98,11 @@ namespace ProjectMEJN.ViewModel
             string kleur = "Rood";
             Board.MovePlayer(kleur,4, ogen);
         }
+
+        //zet de spelers op de juiste plaats op het bord
         private void StartSpel()
         {
-            Board.PutPlayersOnStart();
+           Board.PutPlayersOnStart();
         }
-
-
     }
 }
