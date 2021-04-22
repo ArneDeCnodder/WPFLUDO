@@ -84,7 +84,7 @@
 
 
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Padding="10 20 0 0" Content="Druk enkel op me op te starten" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
+            <Label Padding="10 20 0 0" Content="Druk enkel op me om te starten" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
             <Button Style="{StaticResource ButtonStyle}" Padding="10" Margin="0 0 0 50" Width="250" Command="{Binding StartSpelCommand}">Start het spel!</Button>
 
             <Label Padding="10 0 0 0" Content="Speler 1:" Foreground="white" FontFamily="Calibri" FontWeight="Bold" FontSize="15"></Label>
